@@ -2,6 +2,7 @@
 
 dd/
 util/img
+util/config.json
 
 # dependencies
 /node_modules
