@@ -86,8 +86,22 @@ First we need to load the images into Elastic Search via Deep Detect.
 
 Execute these in order:-
 
+### Fetch
+
 * `util/fetch.py` - Download ODS mugshots to disk
+
+### Create Raw Field For Elastic Search
+
+```
+curl -X PUT "http://localhost:9200/images" -d '{ "mappings": { "img": { "properties": { "doc": { "properties": { "categories": { "properties": { "category": { "fields": { "keyword": { "ignore_above": 256, "type": "keyword" }, "raw": { "type":  "string", "index": "not_analyzed" } }, "type": "text" }, "score": { "type": "float" } } }, "sourceKey": { "fields": { "keyword": { "ignore_above": 256, "type": "keyword" } }, "type": "text" } } } } } } }'
+```
+
+### Load
+
 * `util/load.js` - Load mugshots from disk into ElasticSearch via DD predict (base64 encodes each image)
+
+### Serve 
+
 * `util/server.py` - Serve the mugshot via HTTP from ODS (for links)
 
 Mugshots can be deleted when indexed.
@@ -134,11 +148,6 @@ GET _search
 }
 ```
 
-## Create Raw Field
-
-```
-curl -X PUT "http://localhost:9200/images" -d '{ "mappings": { "img": { "properties": { "doc": { "properties": { "categories": { "properties": { "category": { "fields": { "keyword": { "ignore_above": 256, "type": "keyword" }, "raw": { "type":  "string", "index": "not_analyzed" } }, "type": "text" }, "score": { "type": "float" } } }, "sourceKey": { "fields": { "keyword": { "ignore_above": 256, "type": "keyword" } }, "type": "text" } } } } } } }'
-```
 
 # Resources
 
