@@ -4,6 +4,8 @@ import {
   SearchkitManager,
   SearchkitProvider,
   SearchBox,
+  SideBar,
+  HierarchicalMenuFilter,
   Pagination,
   HitsStats,
   SortingSelector,
@@ -73,6 +75,14 @@ class App extends Component {
           </TopBar>
 
           <LayoutBody>
+            <SideBar>
+              <HierarchicalMenuFilter
+                fields={["doc.categories.category.raw"]}
+                title="Categories"
+                id="categories" />
+            </SideBar>
+
+
             <LayoutResults>
               <ActionBar>
                 <ActionBarRow>
