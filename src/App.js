@@ -22,7 +22,10 @@ import {
 } from "searchkit";
 import "./index.css";
 
-const host = "http://localhost:9200/images";
+const api =
+  process.env.NODE_ENV === "production" ? process.env.REACT_APP_API_URL : "";
+const img = process.env.REACT_APP_IMG_URL;
+const host = `${api}/images`;
 const searchkit = new SearchkitManager(host);
 
 const ImageHitsGridItem = props => {
@@ -37,7 +40,7 @@ const ImageHitsGridItem = props => {
         data-qa="poster"
         alt="presentation"
         className={bemBlocks.item("poster")}
-        src={`http://localhost:9000/?image=${source.doc.sourceKey}`}
+        src={`${img}/?image=${source.doc.sourceKey}`}
         width="170"
         height="240"
       />
@@ -57,7 +60,7 @@ const ImageHitsListItem = props => {
         <img
           alt="mugshot"
           data-qa="poster"
-          src={`http://localhost:9000/?image=${source.doc.sourceKey}`}
+          src={`${img}/?image=${source.doc.sourceKey}`}
         />
       </div>
     </div>
@@ -79,9 +82,9 @@ class App extends Component {
               <HierarchicalMenuFilter
                 fields={["doc.categories.category.raw"]}
                 title="Categories"
-                id="categories" />
+                id="categories"
+              />
             </SideBar>
-
 
             <LayoutResults>
               <ActionBar>
@@ -94,7 +97,12 @@ class App extends Component {
                   <ViewSwitcherToggle />
                   <SortingSelector
                     options={[
-                      { label: "Relevance", field: "_score", order: "desc" }
+                      { label: "Relevance", field: "_score", order: "desc" },
+                      {
+                        label: "Score",
+                        field: "doc.categories.score",
+                        order: "desc"
+                      }
                     ]}
                   />
                 </ActionBarRow>
