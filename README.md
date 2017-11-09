@@ -121,7 +121,15 @@ Mugshots can be deleted when indexed.
 
 # Elasticsearch Queries
 
-## Example fetch of category between score
+## Example fetch of category between a certain score
+
+Launch sense:-
+
+```
+docker run -d -p 5601:5601 s12v/sense
+```
+
+Visit `http://localhost:5601/app/sense`:-
 
 ```javascript
 GET _search
@@ -131,18 +139,18 @@ GET _search
       "must": [
         {
           "match": {
-            "doc.categories.category": "Alexz Johnson"
+            "doc.categories.category": "Emma Bunton"
+          }
+        },
+        {
+          "range": {
+            "doc.categories.score": {
+              "gte": 0.6,
+              "lte": 1
+            }
           }
         }
-      ],
-      "must_not": {
-        "range": {
-          "doc.categories.score": {
-            "gte": 0.2,
-            "lte": 0.5
-          }
-        }
-      }
+      ]
     }
   }
 }
