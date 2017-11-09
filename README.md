@@ -2,7 +2,7 @@
 
 Search for faces matching a model.
 
-Part of [Face Recognition with Deep Detect]( http://gavin.coffee/2017/11/04/face-recognition) series.
+Part of [Face Recognition with Deep Detect](http://gavin.coffee/2017/11/04/face-recognition) series.
 
 Preconfigured with `vgg_face` dataset.
 
