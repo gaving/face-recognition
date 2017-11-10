@@ -1,13 +1,16 @@
-# Face Search With Deep Detect
+# Face Recognition
 
 (Part of the [Face Recognition with Deep
 Detect](http://gavin.coffee/2017/11/04/face-recognition) series.)
 
-An interface for finding images matching a pre-configured model.
+An interface for finding images within a category matching a pre-configured
+model.
 
-This works best with pictures of faces and preconfigured with the `vgg_face`
-model (trained on [LFW](http://vis-www.cs.umass.edu/lfw/)), but could be used
-for any model and associated categories.
+Developed with pictures of faces in mind and preconfigured with the
+`vgg_face` model (trained on [LFW](http://vis-www.cs.umass.edu/lfw/)), but
+could be used for any model and associated categories.
+
+![screen](site/1.png)
 
 ## Installation
 
@@ -78,4 +81,4 @@ The front-end should now be running on your configured port.
 
 Launch http://localhost:9500/ and try some searches!
 
-See [Further](FURTHER.md) for other random information.
+See [further](FURTHER.md) for other random information.

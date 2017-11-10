@@ -1,5 +1,5 @@
 {
-  "name": "face-detect",
+  "name": "face-recognition",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -12,6 +12,7 @@
     "prompt-confirm": "^1.2.0",
     "react": "^15.6.2",
     "react-dom": "^15.6.2",
+    "request-promise": "^4.2.2",
     "searchkit": "^2.2.0"
   },
   "scripts": {

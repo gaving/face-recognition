@@ -73,7 +73,7 @@ class App extends Component {
       <SearchkitProvider searchkit={searchkit}>
         <Layout>
           <TopBar>
-            <div className="my-logo">Face Detect</div>
+            <div className="my-logo">Face Recognition</div>
             <SearchBox autofocus={true} searchOnChange={true} />
           </TopBar>
 
