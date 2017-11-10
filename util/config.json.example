@@ -1,0 +1,9 @@
+{
+    "LOAD_DD_API": "http://localhost:9999/predict",
+    "LOAD_ES_API": "http://localhost/images/_bulk",
+    "LOAD_INPUT_DIRECTORY": "img/output",
+    "FETCH_ORACLE_CONNECT": "user/pass@ (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = host.local)(port = 1521)) (ADDRESS = (PROTOCOL = TCP)(HOST = host.local)(port = 1521))) (CONNECT_DATA = (SERVICE_NAME = ODSSRVC)))",
+    "SERVE_ORACLE_CONNECT": "user/pass@ (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = host.local)(port = 1521)) (ADDRESS = (PROTOCOL = TCP)(HOST = host.local)(port = 1521))) (CONNECT_DATA = (SERVICE_NAME = ODSSRVC)))",
+    "SERVE_HOST": "localhost",
+    "SERVE_PORT": 9000
+}
