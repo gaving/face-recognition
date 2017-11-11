@@ -6,9 +6,10 @@ Detect](http://gavin.coffee/2017/11/04/face-recognition) series.)
 An interface for finding images within a category matching a pre-configured
 model.
 
-Developed with pictures of faces in mind and preconfigured with the
-`vgg_face` model (trained on [LFW](http://vis-www.cs.umass.edu/lfw/)), but
-could be used for any model and associated categories.
+This has been developed with pictures of faces in mind and pre-configured
+with the `vgg_face` model (trained on
+[LFW](http://vis-www.cs.umass.edu/lfw/)), but could be used for any model and
+associated categories.
 
 ![screen](site/1.png)
 
@@ -16,7 +17,7 @@ could be used for any model and associated categories.
 
 See the below steps for getting up and running.
 
-### Run a DD instance
+### Run a Deep Detect instance
 
 Start a DD instance for predicting our images:-
 
@@ -24,9 +25,9 @@ Start a DD instance for predicting our images:-
 docker run -p 8080:8080 --name dd beniz/deepdetect_cpu
 ```
 
-### Run a ES instance
+### Run an Elastic Search instance
 
-Start a ES instance which indexes our DD results:-
+Start an ES instance which indexes our DD results:-
 
 ```
 docker run -p 9200:9200 -p 9300:9300 elasticsearch
@@ -63,7 +64,7 @@ each image for submission).
 `serve-file.py` provides a web server for serving up the images for the
 front-end from disk.
 
-## Launch front-end
+## Run front-end
 
 ### Configure .env
 
